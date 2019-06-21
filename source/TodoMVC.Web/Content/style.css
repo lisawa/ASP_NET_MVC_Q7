@@ -1,0 +1,41 @@
+﻿.a {
+    border: solid 1px black;
+    height: 23px;
+    width: 150px;
+    position: relative;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 25px;
+    line-height: 23px;
+    ;
+}
+
+.b {
+    width: 150px;
+    height: 23px;
+    left: 25px;
+    background-color: rgba(255,255,255,0.75);
+    --border: solid 1px black;
+    position: absolute;
+}
+
+.checktrue {
+    z-index: 50;
+}
+
+.checkfalse {
+    z-index: -50;
+}
+
+.removeBtn {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    border-radius: 5px;
+}
+
+.cb {
+    position: absolute;
+    left: 5px;
+    top: 7px;
+}

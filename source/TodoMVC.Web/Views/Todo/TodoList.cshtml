@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-git.js"></script>
+    <script src="~/Script/app.js"></script>
+    <title></title>
+</head>
+<body>
+    <div id="vueApp">
+        <div style="padding:10px; padding-left:0px;">
+            <input v-model="todoTopic" />
+            <button type="button" v-on:click="check">a</button>
+        </div>
+        <div class="a" v-for="(item, index) in todoList" v-if="checkShow(item.Status)">
+            <div class="b" v-bind:class="[item.Status ? 'checktrue':'checkfalse']"></div>
+            <input class="cb" type="checkbox" v-model="item.Status" />
+            {{item.TodoTopic}}
+            <button class="removeBtn" v-on:click="remove(item)">X</button>
+        </div>
+        <div style="padding:10px; padding-left:0px;">
+            <button v-on:click="changeShowStatus(0)">all</button>
+            <button v-on:click="changeShowStatus(1)">true</button>
+            <button v-on:click="changeShowStatus(2)">flase</button>
+        </div>
+    </div>
+</body>
+</html>
