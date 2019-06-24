@@ -17,7 +17,7 @@
         </div>
         <div class="a" v-for="(item, index) in todoList" v-if="checkShow(item.Status)">
             <div class="b" v-bind:class="[item.Status ? 'checktrue':'checkfalse']"></div>
-            <input class="cb" type="checkbox" v-model="item.Status" />
+            <input class="cb" type="checkbox" v-model="item.Status" v-on:change="update(item)"  />
             {{item.TodoTopic}}
             <button class="removeBtn" v-on:click="remove(item)">X</button>
         </div>

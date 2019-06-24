@@ -46,6 +46,22 @@
                 });
                 this.todoTopic = '';
             },
+            update: function (i) {
+                $.ajax({
+                    url: '/Todo/UpdateStatus',
+                    type: 'POST',
+                    data: {
+                        id: i.ID,
+                        status: i.Status,
+                    },
+                    success: function (res) {
+                        var data = JSON.parse(res);
+                        vm.todoList = data.TodoItemList;
+                    },
+                    error: function (res) {
+                    }
+                });
+            },
             remove: function (i) {
                 $.ajax({
                     url: '/Todo/RemoveShow',
