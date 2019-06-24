@@ -29,8 +29,7 @@ namespace TodoMVC.Web.Repository
 
             using (var ctx = new Q7DBEntities())
             {
-                result = ctx.TodoLists
-                        .SqlQuery("select * from TodoList where showstatus = '1'")
+                result = ctx.TodoLists.Where(x => x.ShowStatus)
                         .ToList();
             }
 
