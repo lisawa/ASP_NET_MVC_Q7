@@ -46,5 +46,10 @@ namespace TodoMVC.Web.Service
         {
             _todorespository.AddNewTopic(topic);
         }
+
+        public void HideAllFinish()
+        {
+            _todorespository.HideAllFinish();
+        }
     }
 }

@@ -63,13 +63,23 @@ namespace TodoMVC.Web.Repository
         {
             using (var ctx = new Q7DBEntities())
             {
-                string sqlquery = @"insert into TodoList
+                string sqlquery = @"INSERT INTO TodoList
                                     (UserName, TodoTopic, Status, CreateDate, FinishTime, ShowStatus)
                                     VALUES('', @topic, 0, GETDATE(), null, 1); ";
                 
                 var paramTopic = (new SqlParameter("@topic", topic));
 
                 var result = ctx.Database.ExecuteSqlCommand(sqlquery, paramTopic);
+            }
+        }
+        
+        public void HideAllFinish()
+        {
+            using (var ctx = new Q7DBEntities())
+            {
+                string query = @"UPDATE TodoList SET ShowStatus = '0' WHERE status = 1";
+
+                var result = ctx.Database.ExecuteSqlCommand(query);
             }
         }
     }

@@ -75,6 +75,18 @@
                     }
                 });
             },
+            hideAllFinish: function () {
+                $.ajax({
+                    url: '/Todo/HideAllFinish',
+                    type: 'POST',
+                    success: function (res) {
+                        var data = JSON.parse(res);
+                        vm.todoList = data.TodoItemList;
+                    },
+                    error: function (res) {
+                    }
+                });
+            },
             checkShow: function (i) {
                 switch (this.showStatus) {
                     case 0:

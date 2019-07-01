@@ -63,5 +63,14 @@ namespace TodoMVC.Web.Controllers
             return Content(Newtonsoft.Json.JsonConvert.SerializeObject(serviceVM));
         }
 
+        public ActionResult HideAllFinish()
+        {
+            _todoService.HideAllFinish();
+
+            TodoListServiceModel serviceVM = _todoService.GetShow();
+
+            return Content(Newtonsoft.Json.JsonConvert.SerializeObject(serviceVM));
+        }
+        
     }
 }
